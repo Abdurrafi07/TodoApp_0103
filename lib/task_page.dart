@@ -15,18 +15,19 @@ class _TaskPageState extends State<TaskPage> {
   void _pickDate(BuildContext context) async {
     DateTime initialDate = _selectedDate ?? DateTime.now();
 
-    showModalBottomSheet(context: context,
-     builder: (BuildContext builder){
-      return SizedBox(
-        height: 300,
-        child: Column(
-          children: [
-            const SizedBox(height: 10),
-            const Text(
-              "Set Task Date & Time",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
-            ),
-                          Expanded(
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext builder) {
+        return SizedBox(
+          height: 300,
+          child: Column(
+            children: [
+              const SizedBox(height: 10),
+              const Text(
+                "Set Task Date & Time",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              Expanded(
                 child: CupertinoDatePicker(
                   initialDateTime: initialDate,
                   mode: CupertinoDatePickerMode.dateAndTime,
@@ -34,22 +35,28 @@ class _TaskPageState extends State<TaskPage> {
                   onDateTimeChanged: (DateTime newDate) {
                     setState(() {
                       _selectedDate = newDate;
-                      _isDateInvalid = false; // Reset error jika tanggal dipilih
+                      _isDateInvalid =
+                          false; // Reset error jika tanggal dipilih
                     });
                   },
                 ),
               ),
-                            ElevatedButton(
+              ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: () => Navigator.pop(context),
-                child: const Text("Select", style: TextStyle(color: Colors.white)),
+                child: const Text(
+                  "Select",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               const SizedBox(height: 10),
-          ],
-        ),
-      );
-    });
+            ],
+          ),
+        );
+      },
+    );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
