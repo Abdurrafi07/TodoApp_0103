@@ -39,6 +39,12 @@ class _TaskPageState extends State<TaskPage> {
                   },
                 ),
               ),
+                            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () => Navigator.pop(context),
+                child: const Text("Select", style: TextStyle(color: Colors.white)),
+              ),
+              const SizedBox(height: 10),
           ],
         ),
       );
