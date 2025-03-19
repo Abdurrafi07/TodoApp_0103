@@ -21,6 +21,10 @@ class _TaskPageState extends State<TaskPage> {
         child: Column(
           children: [
             const SizedBox(height: 10),
+            const Text(
+              "Set Task Date & Time",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
+            ),
           ],
         ),
       );
