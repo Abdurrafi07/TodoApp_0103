@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:secondproject/profile_page.dart';
+import 'package:secondproject/task_page.dart';
 
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ProfilePage(),
+      home: const TaskPage(),
       debugShowCheckedModeBanner: false,
     );
   }
