@@ -11,6 +11,21 @@ class _TaskPageState extends State<TaskPage> {
   DateTime? _selectedDate;
   bool _isDateInvalid = false;
 
+  void _pickDate(BuildContext context) async {
+    DateTime initialDate = _selectedDate ?? DateTime.now();
+
+    showModalBottomSheet(context: context,
+     builder: (BuildContext builder){
+      return SizedBox(
+        height: 300,
+        child: Column(
+          children: [
+            const SizedBox(height: 10),
+          ],
+        ),
+      );
+     });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
