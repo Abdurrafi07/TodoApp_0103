@@ -24,6 +24,27 @@ class _TaskPageState extends State<TaskPage> {
               "Task Date:",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        _selectedDate == null
+                            ? "Select a date"
+                            : "${_selectedDate!.day}-${_selectedDate!.month}-${_selectedDate!.year} ${_selectedDate!.hour}:${_selectedDate!.minute}",
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.calendar_today, color: Colors.blue),
+                  onPressed: () => _pickDate(context),
+                ),
+              ],
+            ),
           ],
         ),
       ),
