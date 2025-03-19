@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class TaskPage extends StatefulWidget {
   const TaskPage({super.key});
@@ -25,10 +26,23 @@ class _TaskPageState extends State<TaskPage> {
               "Set Task Date & Time",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
             ),
+                          Expanded(
+                child: CupertinoDatePicker(
+                  initialDateTime: initialDate,
+                  mode: CupertinoDatePickerMode.dateAndTime,
+                  use24hFormat: false,
+                  onDateTimeChanged: (DateTime newDate) {
+                    setState(() {
+                      _selectedDate = newDate;
+                      _isDateInvalid = false; // Reset error jika tanggal dipilih
+                    });
+                  },
+                ),
+              ),
           ],
         ),
       );
-     });
+    });
   }
   @override
   Widget build(BuildContext context) {
