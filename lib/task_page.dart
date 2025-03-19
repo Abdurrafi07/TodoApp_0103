@@ -8,6 +8,9 @@ class TaskPage extends StatefulWidget {
 }
 
 class _TaskPageState extends State<TaskPage> {
+  DateTime? _selectedDate;
+  bool _isDateInvalid = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
