@@ -173,38 +173,42 @@ class _TaskPageState extends State<TaskPage> {
               "List Tasks",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            Expanded(child: 
-            ListView.builder(
-              itemCount: _tasks.length,
-              itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    title: Text(
-                      _tasks[index]['name'],
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Deadline: ${_tasks[index]['deadline'].day}-${_tasks[index]['deadline'].month}-${_tasks[index]['deadline'].year} ${_tasks[index]['deadline'].hour}:${_tasks[index]['deadline'].minute}",
-                        ),
-                        Text(
-                          _tasks[index]['isDone'] ? "Done" : "Not Done",
-                          style: TextStyle(
-                            color: 
-                            _tasks[index]['isDone'] ?Colors.green : Colors.red,
+            Expanded(
+              child: ListView.builder(
+                itemCount: _tasks.length,
+                itemBuilder: (context, index) {
+                  return Card(
+                    child: ListTile(
+                      title: Text(
+                        _tasks[index]['name'],
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Deadline: ${_tasks[index]['deadline'].day}-${_tasks[index]['deadline'].month}-${_tasks[index]['deadline'].year} ${_tasks[index]['deadline'].hour}:${_tasks[index]['deadline'].minute}",
                           ),
-                        )
-                      ],
+                          Text(
+                            _tasks[index]['isDone'] ? "Done" : "Not Done",
+                            style: TextStyle(
+                              color:
+                                  _tasks[index]['isDone']
+                                      ? Colors.green
+                                      : Colors.red,
+                            ),
+                          ),
+                        ],
+                      ),
+                      trailing: Checkbox(
+                        value: _tasks[index]['isDone'],
+                        onChanged: (value) => _toggleTaskStatus(index),
+                      ),
                     ),
-                    trailing: Checkbox(
-                      value: _tasks[index]['isDone'], 
-                      onChanged: (value) => _toggleTaskStatus(index),),
-                  ),
-                );
-              },
-            ))
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
