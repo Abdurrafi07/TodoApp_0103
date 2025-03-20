@@ -9,6 +9,7 @@ class TaskPage extends StatefulWidget {
 }
 
 class _TaskPageState extends State<TaskPage> {
+  final List<Map<String, dynamic>> _tasks = [];
   DateTime? _selectedDate;
   bool _isDateInvalid = false;
   final _formKey = GlobalKey<FormState>();
