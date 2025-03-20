@@ -114,6 +114,17 @@ class _TaskPageState extends State<TaskPage> {
                       },
                     ),
                   ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 95, 0, 112),
+                    ),
+                    onPressed: _addTask,
+                    child: const Text(
+                      "Submit",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
             ),
