@@ -59,6 +59,12 @@ class _TaskPageState extends State<TaskPage> {
     );
   }
 
+  void _addTask() {
+    setState(() {
+      _isDateInvalid = _selectedDate == null;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
