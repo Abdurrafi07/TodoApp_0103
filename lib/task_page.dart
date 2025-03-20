@@ -118,7 +118,11 @@ class _TaskPageState extends State<TaskPage> {
                       Text(
                         _selectedDate == null
                             ? "Select a date"
-                            : "${_selectedDate!.day}-${_selectedDate!.month}-${_selectedDate!.year} ${_selectedDate!.hour}:${_selectedDate!.minute}",
+                            : "${_selectedDate!.day.toString().padLeft(2, '0')}-"
+                              "${_selectedDate!.month.toString().padLeft(2, '0')}-"
+                              "${_selectedDate!.year} "
+                              "${_selectedDate!.hour.toString().padLeft(2, '0')}:"
+                              "${_selectedDate!.minute.toString().padLeft(2, '0')}",
                         style: const TextStyle(fontSize: 16),
                       ),
                       if (_isDateInvalid)
@@ -189,7 +193,11 @@ class _TaskPageState extends State<TaskPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Deadline: ${_tasks[index]['deadline'].day}-${_tasks[index]['deadline'].month}-${_tasks[index]['deadline'].year} ${_tasks[index]['deadline'].hour}:${_tasks[index]['deadline'].minute}",
+                            "Deadline: ${_tasks[index]['deadline'].day.toString().padLeft(2, '0')}-"
+                            "${_tasks[index]['deadline'].month.toString().padLeft(2, '0')}-"
+                            "${_tasks[index]['deadline'].year} "
+                            "${_tasks[index]['deadline'].hour.toString().padLeft(2, '0')}:"
+                            "${_tasks[index]['deadline'].minute.toString().padLeft(2, '0')}",
                           ),
                           Text(
                             _tasks[index]['isDone'] ? "Done" : "Not Done",
