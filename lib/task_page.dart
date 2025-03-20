@@ -14,6 +14,7 @@ class _TaskPageState extends State<TaskPage> {
   DateTime? _selectedDate;
   bool _isDateInvalid = false;
   final _formKey = GlobalKey<FormState>();
+
   void _pickDate(BuildContext context) async {
     DateTime initialDate = _selectedDate ?? DateTime.now();
 
@@ -166,6 +167,11 @@ class _TaskPageState extends State<TaskPage> {
                   ),
                 ],
               ),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "List Tasks",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ],
         ),
