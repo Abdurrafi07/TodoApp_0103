@@ -64,7 +64,7 @@ class _TaskPageState extends State<TaskPage> {
       _isDateInvalid = _selectedDate == null;
     });
 
-        if (_formKey.currentState!.validate() && !_isDateInvalid) {
+    if (_formKey.currentState!.validate() && !_isDateInvalid) {
       setState(() {
         _tasks.add({
           'name': _nameController.text,
@@ -76,7 +76,7 @@ class _TaskPageState extends State<TaskPage> {
         _isDateInvalid = false;
       });
 
-            ScaffoldMessenger.of(context).showSnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Task added successfully"),
           behavior: SnackBarBehavior.floating, // Membuat snackbar mengambang
@@ -90,6 +90,12 @@ class _TaskPageState extends State<TaskPage> {
         ),
       );
     }
+  }
+
+  void _toggleTaskStatus(int index) {
+    setState(() {
+      _tasks[index]['isDone'] = !_tasks[index]['isDone'];
+    });
   }
 
   @override
