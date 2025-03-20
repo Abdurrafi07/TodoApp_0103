@@ -173,6 +173,20 @@ class _TaskPageState extends State<TaskPage> {
               "List Tasks",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
+            Expanded(child: 
+            ListView.builder(
+              itemCount: _tasks.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  child: ListTile(
+                    title: Text(
+                      _tasks[index]['name'],
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                );
+              },
+            ))
           ],
         ),
       ),
