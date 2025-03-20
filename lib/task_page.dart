@@ -124,6 +124,11 @@ class _TaskPageState extends State<TaskPage> {
                             : "${_selectedDate!.day}-${_selectedDate!.month}-${_selectedDate!.year} ${_selectedDate!.hour}:${_selectedDate!.minute}",
                         style: const TextStyle(fontSize: 16),
                       ),
+                      if (_isDateInvalid)
+                        const Text(
+                          "Please select a date",
+                          style: TextStyle(fontSize: 14, color: Colors.red),
+                        ),
                     ],
                   ),
                 ),
