@@ -75,6 +75,21 @@ class _TaskPageState extends State<TaskPage> {
         _selectedDate = null;
         _isDateInvalid = false;
       });
+
+            ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Task added successfully"),
+          behavior: SnackBarBehavior.floating, // Membuat snackbar mengambang
+          margin: EdgeInsets.only(
+            bottom: 80, // Atur agar tidak terlalu dekat dengan bawah
+            left: 20,
+            right: 20,
+          ),
+          backgroundColor: Colors.teal,
+          duration: Duration(seconds: 3),
+        ),
+      );
+    }
   }
 
   @override
