@@ -183,6 +183,14 @@ class _TaskPageState extends State<TaskPage> {
                       _tasks[index]['name'],
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Deadline: ${_tasks[index]['deadline'].day}-${_tasks[index]['deadline'].month}-${_tasks[index]['deadline'].year} ${_tasks[index]['deadline'].hour}:${_tasks[index]['deadline'].minute}",
+                        )
+                      ],
+                    ),
                   ),
                 );
               },
