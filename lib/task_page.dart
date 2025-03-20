@@ -63,6 +63,18 @@ class _TaskPageState extends State<TaskPage> {
     setState(() {
       _isDateInvalid = _selectedDate == null;
     });
+
+        if (_formKey.currentState!.validate() && !_isDateInvalid) {
+      setState(() {
+        _tasks.add({
+          'name': _nameController.text,
+          'deadline': _selectedDate!,
+          'isDone': false,
+        });
+        _nameController.clear();
+        _selectedDate = null;
+        _isDateInvalid = false;
+      });
   }
 
   @override
