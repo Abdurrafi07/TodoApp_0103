@@ -198,6 +198,9 @@ class _TaskPageState extends State<TaskPage> {
                         )
                       ],
                     ),
+                    trailing: Checkbox(
+                      value: _tasks[index]['isDone'], 
+                      onChanged: (value) => _toggleTaskStatus(index),),
                   ),
                 );
               },
