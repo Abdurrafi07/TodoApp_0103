@@ -188,6 +188,13 @@ class _TaskPageState extends State<TaskPage> {
                       children: [
                         Text(
                           "Deadline: ${_tasks[index]['deadline'].day}-${_tasks[index]['deadline'].month}-${_tasks[index]['deadline'].year} ${_tasks[index]['deadline'].hour}:${_tasks[index]['deadline'].minute}",
+                        ),
+                        Text(
+                          _tasks[index]['isDone'] ? "Done" : "Not Done",
+                          style: TextStyle(
+                            color: 
+                            _tasks[index]['isDone'] ?Colors.green : Colors.red,
+                          ),
                         )
                       ],
                     ),
