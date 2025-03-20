@@ -93,6 +93,24 @@ class _TaskPageState extends State<TaskPage> {
                 ),
               ],
             ),
+            const SizedBox(height: 10),
+            Form(
+              key: _formKey,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _nameController,
+                      decoration: const InputDecoration(
+                        labelText: "Task Name",
+                        hintText: "Enter task name",
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
